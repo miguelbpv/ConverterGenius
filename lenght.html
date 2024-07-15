@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Length Converter - ConverterGenius</title>
+    <title>Length Converter</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>ConverterGenius</h1>
-        <nav>
-            <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
-            <a href="about.html">About us</a>
-        </nav>
+        <h1>Length Converter</h1>
     </header>
     <main>
         <div class="converter-container">
-            <h2>Length Converter</h2>
+            <select id="unitType" onchange="populateUnitOptions()">
+                <option value="length" selected>Length</option>
+            </select>
             <select id="fromUnit"></select>
             <select id="toUnit"></select>
             <input type="number" id="inputValue" placeholder="Enter value">
@@ -26,7 +23,7 @@
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 ConverterGenius. All rights reserved.</p>
+        <p>&copy; 2024 Unit Converter. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
 </body>
