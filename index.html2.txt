@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConverterGenius</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>ConverterGenius</h1>
+        <nav>
+            <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
+            <a href="about.html">About us</a>
+        </nav>
+    </header>
+    <main>
+        <div class="unit-grid">
+            <a href="length.html" class="unit-card">Length</a>
+            <a href="weight.html" class="unit-card">Weight</a>
+            <a href="temperature.html" class="unit-card">Temperature</a>
+            <a href="volume.html" class="unit-card">Volume</a>
+            <a href="time.html" class="unit-card">Time</a>
+            <a href="speed.html" class="unit-card">Speed</a>
+            <a href="area.html" class="unit-card">Area</a>
+            <a href="energy.html" class="unit-card">Energy</a>
+            <a href="power.html" class="unit-card">Power</a>
+            <a href="pressure.html" class="unit-card">Pressure</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ConverterGenius. All rights reserved.</p>
+    </footer>
+</body>
+</html>

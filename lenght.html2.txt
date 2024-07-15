@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter - ConverterGenius</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>ConverterGenius</h1>
+        <nav>
+            <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
+            <a href="about.html">About us</a>
+        </nav>
+    </header>
+    <main>
+        <div class="converter-container">
+            <h2>Length Converter</h2>
+            <select id="fromUnit"></select>
+            <select id="toUnit"></select>
+            <input type="number" id="inputValue" placeholder="Enter value">
+            <button onclick="convert()">Convert</button>
+            <div id="result"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ConverterGenius. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
