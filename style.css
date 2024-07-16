@@ -113,7 +113,7 @@ footer {
     background-color: #008080;
     color: #fff;
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.3rem;
     font-size: 0.9rem;
     display: flex;
     flex-direction: column;
@@ -122,7 +122,7 @@ footer {
 
 .about-button {
     display: inline-block;
-    margin-bottom: 3px; /* Reduzido de 5px para 3px */
+    margin-bottom: 2px; /* Reduzido de 5px para 3px */
     padding: 5px 10px;
     background-color: #fff;
     color: #008080;
