@@ -122,13 +122,17 @@ footer {
 
 .about-button {
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 3px; /* Reduzido de 5px para 3px */
     padding: 5px 10px;
     background-color: #fff;
     color: #008080;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+}
+
+footer p {
+    margin: 0; /* Remove a margem padrão do parágrafo */
 }
 
 @media (max-width: 600px) {
