@@ -12,8 +12,8 @@ header {
     color: #fff;
     padding: 1rem 2rem;
     text-align: center;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
