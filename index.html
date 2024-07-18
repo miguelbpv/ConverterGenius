@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConverterGenius - Fast and Accurate Unit Converter Online</title>
-    <meta name="description" content="ConverterGenius offers a quick and easy way to convert units online. Convert length, weight, temperature, and more with our user-friendly tool.">
+    <title>ConverterGenius: Fast & Accurate Unit Converter | Length, Weight, Temperature & More</title>
+    <meta name="description" content="ConverterGenius offers quick and easy unit conversions online. Convert length, weight, temperature, and more with our user-friendly tool. Get accurate results instantly!">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="ConverterGenius logo.png" type="image/png">
+    <link rel="icon" href="ConverterGenius-logo.png" type="image/png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ConverterGenius",
+      "url": "https://www.convertergenius.com",
+      "description": "Fast and accurate unit converter for length, weight, temperature, and more.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web"
+    }
+    </script>
 </head>
 <body>
     <header>
-        <h1><a href="index.html" class="home-link"><img src="ConverterGenius logo.png" alt="ConverterGenius Logo" class="logo">ConverterGenius</a></h1>
+        <h1><a href="index.html" class="home-link"><img src="ConverterGenius-logo.png" alt="ConverterGenius Logo" class="logo">ConverterGenius</a></h1>
     </header>
     <main>
         <div class="converter-container">
+            <h2>Unit Converter</h2>
+            <label for="unitType">UNIT TYPE</label>
             <select id="unitType" onchange="populateUnitOptions()">
                 <option value="length">Length</option>
                 <option value="weight">Weight</option>
@@ -30,12 +43,34 @@
                 <option value="angle">Angle</option>
             </select>
             <div class="unit-selectors">
-                <select id="fromUnit"></select>
-                <select id="toUnit"></select>
+                <div>
+                    <label for="fromUnit">FROM</label>
+                    <select id="fromUnit"></select>
+                </div>
+                <div>
+                    <label for="toUnit">TO</label>
+                    <select id="toUnit"></select>
+                </div>
             </div>
             <input type="number" id="inputValue" placeholder="Enter value">
             <button onclick="convert()">Convert</button>
             <div id="result"></div>
+        </div>
+        <div id="unitDescription"></div>
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>How accurate are the conversions?</summary>
+                <p>Our conversions are highly accurate, using precise conversion factors to ensure reliable results.</p>
+            </details>
+            <details>
+                <summary>Can I convert between different unit types?</summary>
+                <p>No, you can only convert between units of the same type (e.g., length to length, weight to weight).</p>
+            </details>
+            <details>
+                <summary>Is ConverterGenius free to use?</summary>
+                <p>Yes, ConverterGenius is completely free to use with no hidden charges or subscriptions required.</p>
+            </details>
         </div>
     </main>
     <footer>
