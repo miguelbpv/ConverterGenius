@@ -1,3 +1,6 @@
+function formatUnitName(unit) {
+    return unit.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
 const conversionFactors = {
     length: {
         meters: { factor: 1, abbr: 'm' },
@@ -167,8 +170,9 @@ function convert() {
         result = baseValue * conversionFactors[unitType][toUnit].factor;
     }
 
-    document.getElementById('result').innerHTML = `${inputValue} ${conversionFactors[unitType][fromUnit].abbr} = ${result.toFixed(6)} ${conversionFactors[unitType][toUnit].abbr}`;
+    document.getElementById('result').innerHTML = `${inputValue} ${formatUnitName(fromUnit)} = ${result.toFixed(6)} ${formatUnitName(toUnit)}`;
 }
+
 
 function convertTemperature(value, from, to) {
     if (from === to) return value;
@@ -202,7 +206,8 @@ function populateUnitOptions() {
 
     // Populate new options
     for (const unit in conversionFactors[unitType]) {
-        const displayUnit = `${unit.replace('_', ' ')} (${conversionFactors[unitType][unit].abbr})`;
+        const formattedUnit = formatUnitName(unit);
+        const displayUnit = `${formattedUnit} (${conversionFactors[unitType][unit].abbr})`;
         fromUnit.options.add(new Option(displayUnit, unit));
         toUnit.options.add(new Option(displayUnit, unit));
     }
