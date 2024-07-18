@@ -48,7 +48,7 @@ header h1 {
 main {
     flex: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     padding: 1rem;
 }
@@ -60,6 +60,7 @@ main {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 400px;
+    margin-bottom: 1rem;
 }
 
 .about-container {
@@ -82,7 +83,7 @@ select, input, button {
     gap: 1rem;
 }
 
-.unit-selectors select {
+.unit-selectors > div {
     flex: 1;
 }
 
@@ -109,6 +110,39 @@ button:hover {
     margin-top: 1rem;
     text-align: center;
     font-size: 1.2rem;
+}
+
+#unitDescription {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.faq-section {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.faq-section h2 {
+    margin-top: 0;
+}
+
+details {
+    margin-bottom: 1rem;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
 }
 
 footer {
@@ -140,7 +174,7 @@ footer p {
 }
 
 @media (max-width: 600px) {
-    .converter-container, .about-container {
+    .converter-container, .about-container, #unitDescription, .faq-section {
         padding: 1rem;
     }
 
