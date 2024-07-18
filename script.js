@@ -170,7 +170,7 @@ function convert() {
         result = baseValue * conversionFactors[unitType][toUnit].factor;
     }
 
-    document.getElementById('result').innerHTML = `${inputValue} ${formatUnitName(fromUnit)} = ${result.toFixed(6)} ${formatUnitName(toUnit)}`;
+    document.getElementById('result').innerHTML = `${inputValue} ${conversionFactors[unitType][fromUnit].abbr} = ${result.toFixed(6)} ${conversionFactors[unitType][toUnit].abbr}`;
 }
 
 
