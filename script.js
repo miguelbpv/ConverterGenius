@@ -132,6 +132,20 @@ const conversionFactors = {
         arcseconds: { factor: 3600, abbr: '″' }
     }
 };
+const unitDescriptions = {
+    length: "Length is a measure of distance between two points in one dimension. It is a fundamental quantity in physics and everyday life. Common units of length include meters (m), kilometers (km), centimeters (cm), millimeters (mm), inches (in), feet (ft), yards (yd), and miles (mi). The choice of unit depends on the scale of the measurement, from microscopic distances to astronomical distances.",
+    weight: "Weight, often used interchangeably with mass in everyday language, is a measure of the amount of matter in an object. On Earth, weight is the force exerted on an object due to gravity. Common units of weight include kilograms (kg), grams (g), pounds (lb), ounces (oz), and tons. In scientific contexts, mass (measured in kilograms) is preferred over weight, as it remains constant regardless of gravitational field.",
+    temperature: "Temperature is a measure of the average kinetic energy of particles in a substance, indicating how hot or cold it is. The three most commonly used temperature scales are Celsius (°C), Fahrenheit (°F), and Kelvin (K). Celsius and Fahrenheit are relative scales based on the freezing and boiling points of water, while Kelvin is an absolute scale used in scientific calculations, with 0 K representing absolute zero, the lowest possible temperature.",
+    volume: "Volume is the amount of three-dimensional space occupied by a substance or object. It is measured in cubic units for solids (e.g., cubic meters, cubic feet) and in liters or gallons for liquids. Common units include liters (L), milliliters (mL), cubic meters (m³), cubic centimeters (cm³), gallons, quarts, and fluid ounces. Volume is crucial in various fields, including chemistry, physics, and everyday cooking and construction.",
+    time: "Time is the ongoing sequence of events taking place. It is a fundamental quantity in physics and plays a crucial role in our daily lives. Common units of time include seconds (s), minutes (min), hours (h), days, weeks, months, and years. Smaller units like milliseconds (ms), microseconds (µs), and nanoseconds (ns) are used in scientific and technological applications, while larger units like decades and centuries are used for historical contexts.",
+    speed: "Speed is the rate of change of position with respect to time, indicating how fast an object is moving. It is typically measured in units of distance per unit of time. Common units include meters per second (m/s), kilometers per hour (km/h), and miles per hour (mph). In nautical contexts, knots are used. Speed is a crucial concept in physics, transportation, and many aspects of everyday life.",
+    area: "Area is a measure of the amount of space taken up by a two-dimensional surface. It is calculated by multiplying length by width for rectangular shapes, with more complex formulas for other shapes. Common units of area include square meters (m²), square kilometers (km²), square feet (ft²), square yards (yd²), acres, and hectares. Area measurements are essential in fields such as construction, land management, and physics.",
+    energy: "Energy is the capacity to do work or cause change in a system. It exists in various forms, including kinetic, potential, thermal, electrical, and chemical energy. Common units of energy include joules (J), calories (cal), kilowatt-hours (kWh), and British Thermal Units (BTU). Energy is a fundamental concept in physics and plays a crucial role in understanding everything from subatomic particles to cosmic phenomena.",
+    power: "Power is the rate at which energy is transferred or work is done. It is calculated by dividing energy by time. The standard unit of power is the watt (W), named after James Watt. Other common units include horsepower (hp), used especially for engine power, and kilowatts (kW). Power is an important concept in physics, engineering, and everyday applications like electricity consumption.",
+    pressure: "Pressure is the force applied perpendicular to the surface of an object per unit area. It is particularly important in fluid mechanics and thermodynamics. The SI unit of pressure is the pascal (Pa), but other common units include atmospheres (atm), bars, and pounds per square inch (psi). Pressure is crucial in many applications, from weather forecasting to engineering and medicine.",
+    data: "Data storage capacity is a measure of the amount of digital information that can be stored in a device or system. It is typically measured in bytes or bits, with prefixes like kilo-, mega-, giga-, and tera- used for larger quantities. One byte usually consists of 8 bits. These units are crucial in computing and digital technology, used to quantify storage capacity of devices, data transfer rates, and file sizes.",
+    angle: "An angle is the figure formed by two rays or lines sharing a common endpoint, called the vertex. It is a measure of rotation and is fundamental in geometry, trigonometry, and many practical applications. The most common units for measuring angles are degrees (°), where a full circle is 360°, and radians, where a full circle is approximately 6.28 radians. Other units include gradians and arcminutes/arcseconds for more precise measurements."
+};
 
 function convert() {
     const unitType = document.getElementById('unitType').value;
@@ -188,7 +202,7 @@ function populateUnitOptions() {
 
     // Populate new options
     for (const unit in conversionFactors[unitType]) {
-        const displayUnit = unit.replace('_', ' ');
+        const displayUnit = `${unit.replace('_', ' ')} (${conversionFactors[unitType][unit].abbr})`;
         fromUnit.options.add(new Option(displayUnit, unit));
         toUnit.options.add(new Option(displayUnit, unit));
     }
@@ -200,6 +214,14 @@ function populateUnitOptions() {
     if (toUnit.options.length > 1) {
         toUnit.selectedIndex = 1;
     }
+
+    // Update unit description
+    updateUnitDescription(unitType);
+}
+
+function updateUnitDescription(unitType) {
+    const descriptionElement = document.getElementById('unitDescription');
+    descriptionElement.innerHTML = `<p>${unitDescriptions[unitType]}</p>`;
 }
 
 // Call populateUnitOptions when the page loads
