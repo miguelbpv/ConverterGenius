@@ -14,6 +14,9 @@ const conversionFactors = {
         feet: { factor: 3.28084, abbr: 'ft' },
         inches: { factor: 39.3701, abbr: 'in' },
         nautical_miles: { factor: 0.000539957, abbr: 'nmi' }
+        micrometers: { factor: 1e6, abbr: 'µm' },
+        nanometers: { factor: 1e9, abbr: 'nm' },
+        nautical_miles: { factor: 0.000539957, abbr: 'nmi' }
     },
     weight: {
         kilograms: { factor: 1, abbr: 'kg' },
@@ -22,6 +25,11 @@ const conversionFactors = {
         metric_tons: { factor: 0.001, abbr: 't' },
         pounds: { factor: 2.20462, abbr: 'lb' },
         ounces: { factor: 35.274, abbr: 'oz' },
+        carats: { factor: 5000, abbr: 'ct' },
+        long_tons: { factor: 0.000984207, abbr: 'long tn' },
+        short_tons: { factor: 0.00110231, abbr: 'short tn' },
+        stone: { factor: 0.157473, abbr: 'st' }
+        metric_tons: { factor: 0.001, abbr: 't' },
         carats: { factor: 5000, abbr: 'ct' },
         long_tons: { factor: 0.000984207, abbr: 'long tn' },
         short_tons: { factor: 0.00110231, abbr: 'short tn' },
@@ -134,6 +142,38 @@ const conversionFactors = {
         arcminutes: { factor: 60, abbr: '′' },
         arcseconds: { factor: 3600, abbr: '″' }
     }
+velocity_angular: {
+        radians_per_second: { factor: 1, abbr: 'rad/s' },
+        degrees_per_second: { factor: 57.2958, abbr: '°/s' },
+        revolutions_per_minute: { factor: 9.54930, abbr: 'rpm' }
+    },
+    acceleration: {
+        meters_per_second_squared: { factor: 1, abbr: 'm/s²' },
+        feet_per_second_squared: { factor: 3.28084, abbr: 'ft/s²' },
+        g_force: { factor: 0.101972, abbr: 'g' }
+    },
+    density: {
+        kilograms_per_cubic_meter: { factor: 1, abbr: 'kg/m³' },
+        grams_per_cubic_centimeter: { factor: 0.001, abbr: 'g/cm³' },
+        pounds_per_cubic_foot: { factor: 0.0624278, abbr: 'lb/ft³' }
+    },
+    specific_volume: {
+        cubic_meters_per_kilogram: { factor: 1, abbr: 'm³/kg' },
+        cubic_feet_per_pound: { factor: 16.0185, abbr: 'ft³/lb' }
+    },
+    moment_of_inertia: {
+        kilogram_square_meters: { factor: 1, abbr: 'kg·m²' },
+        pound_square_feet: { factor: 23.7304, abbr: 'lb·ft²' }
+    },
+    moment_of_force: {
+        newton_meters: { factor: 1, abbr: 'N·m' },
+        pound_feet: { factor: 0.737562, abbr: 'lbf·ft' }
+    },
+    torque: {
+        newton_meters: { factor: 1, abbr: 'N·m' },
+        pound_feet: { factor: 0.737562, abbr: 'lbf·ft' },
+        ounce_force_inches: { factor: 141.612, abbr: 'ozf·in' }
+    }
 };
 const unitDescriptions = {
     length: "Length is a measure of distance between two points in one dimension. It is a fundamental quantity in physics and everyday life. Common units of length include meters (m), kilometers (km), centimeters (cm), millimeters (mm), inches (in), feet (ft), yards (yd), and miles (mi). The choice of unit depends on the scale of the measurement, from microscopic distances to astronomical distances.",
@@ -148,6 +188,13 @@ const unitDescriptions = {
     pressure: "Pressure is the force applied perpendicular to the surface of an object per unit area. It is particularly important in fluid mechanics and thermodynamics. The SI unit of pressure is the pascal (Pa), but other common units include atmospheres (atm), bars, and pounds per square inch (psi). Pressure is crucial in many applications, from weather forecasting to engineering and medicine.",
     data: "Data storage capacity is a measure of the amount of digital information that can be stored in a device or system. It is typically measured in bytes or bits, with prefixes like kilo-, mega-, giga-, and tera- used for larger quantities. One byte usually consists of 8 bits. These units are crucial in computing and digital technology, used to quantify storage capacity of devices, data transfer rates, and file sizes.",
     angle: "An angle is the figure formed by two rays or lines sharing a common endpoint, called the vertex. It is a measure of rotation and is fundamental in geometry, trigonometry, and many practical applications. The most common units for measuring angles are degrees (°), where a full circle is 360°, and radians, where a full circle is approximately 6.28 radians. Other units include gradians and arcminutes/arcseconds for more precise measurements."
+    velocity_angular: "Angular velocity is the rate of change of angular position of a rotating body. It is commonly used in physics and engineering to describe rotational motion. The standard unit is radians per second (rad/s), but it's also often expressed in degrees per second (°/s) or revolutions per minute (rpm).",
+    acceleration: "Acceleration is the rate of change of velocity of an object with respect to time. It is a vector quantity, having both magnitude and direction. The standard unit is meters per second squared (m/s²), but it's also commonly expressed in feet per second squared (ft/s²) or in terms of g-force, where 1 g is approximately 9.81 m/s².",
+    density: "Density is a measure of mass per unit of volume. It is an important property of materials and is used in various fields including physics, engineering, and materials science. The standard unit is kilograms per cubic meter (kg/m³), but it's also often expressed in grams per cubic centimeter (g/cm³) or pounds per cubic foot (lb/ft³).",
+    specific_volume: "Specific volume is the volume occupied by a unit mass of a substance. It is the reciprocal of density and is particularly useful in thermodynamics. The standard unit is cubic meters per kilogram (m³/kg), but it's also sometimes expressed in cubic feet per pound (ft³/lb).",
+    moment_of_inertia: "Moment of inertia, also known as rotational inertia, is a measure of an object's resistance to rotational acceleration. It plays a similar role in rotational motion as mass does in linear motion. The standard unit is kilogram square meters (kg·m²), but it's also sometimes expressed in pound square feet (lb·ft²).",
+    moment_of_force: "Moment of force, also known as torque, is the rotational equivalent of linear force. It is the product of force and the perpendicular distance from the axis of rotation to the line of action of the force. The standard unit is newton meters (N·m), but it's also often expressed in pound feet (lbf·ft).",
+    torque: "Torque, also known as moment of force, is a rotational force that causes an object to rotate around an axis. It is crucial in many mechanical systems, especially in engines and motors. The standard unit is newton meters (N·m), but it's also commonly expressed in pound feet (lbf·ft) or ounce force inches (ozf·in)."
 };
 
 function convert() {
@@ -229,8 +276,85 @@ function updateUnitDescription(unitType) {
     descriptionElement.innerHTML = `<p>${unitDescriptions[unitType]}</p>`;
 }
 
-// Call populateUnitOptions when the page loads
-window.onload = populateUnitOptions;
+function updateDynamicSnippet() {
+    const unitType = document.getElementById('unitType').value;
+    const fromUnit = document.getElementById('fromUnit').value;
+    const toUnit = document.getElementById('toUnit').value;
+    
+    const fromUnitName = formatUnitName(fromUnit);
+    const toUnitName = formatUnitName(toUnit);
+    
+    let snippetHeader = `From ${fromUnitName} (${conversionFactors[unitType][fromUnit].abbr}) to ${toUnitName} (${conversionFactors[unitType][toUnit].abbr})?`;
+    
+    let snippetText = '';
+    if (unitType === 'temperature') {
+        snippetText = getTemperatureSnippetText(fromUnit, toUnit);
+    } else {
+        const conversionFactor = conversionFactors[unitType][toUnit].factor / conversionFactors[unitType][fromUnit].factor;
+        snippetText = `1 ${conversionFactors[unitType][fromUnit].abbr} is equal to ${conversionFactor.toFixed(6)} ${conversionFactors[unitType][toUnit].abbr}. `;
+    }
+    
+    snippetText += `This conversion is useful for ${getConversionUseCase(unitType, fromUnit, toUnit)}.`;
+    
+    const snippetElement = document.getElementById('dynamicSnippet');
+    snippetElement.innerHTML = `
+        <h3>${snippetHeader}</h3>
+        <p>${snippetText}</p>
+    `;
+}
 
-// Add event listener to unitType select element
-document.getElementById('unitType').addEventListener('change', populateUnitOptions);
+function getTemperatureSnippetText(fromUnit, toUnit) {
+    if (fromUnit === toUnit) return "The temperature remains the same. ";
+    
+    const conversions = {
+        celsius_to_fahrenheit: "Multiply by 9/5 and add 32. ",
+        fahrenheit_to_celsius: "Subtract 32 and multiply by 5/9. ",
+        celsius_to_kelvin: "Add 273.15. ",
+        kelvin_to_celsius: "Subtract 273.15. ",
+        fahrenheit_to_kelvin: "Subtract 32, multiply by 5/9, and add 273.15. ",
+        kelvin_to_fahrenheit: "Subtract 273.15, multiply by 9/5, and add 32. "
+    };
+    
+    return conversions[`${fromUnit}_to_${toUnit}`] || "Use the appropriate conversion formula. ";
+}
+
+function getConversionUseCase(unitType, fromUnit, toUnit) {
+    // Add more specific use cases as needed
+    const useCases = {
+        length: "measuring distances or sizes",
+        weight: "determining the mass of objects",
+        temperature: "comparing temperatures in different scales",
+        volume: "measuring the capacity of containers or spaces",
+        time: "expressing durations in different time units",
+        speed: "comparing velocities in various contexts",
+        area: "calculating surface areas",
+        energy: "expressing amounts of energy in different systems",
+        power: "comparing rates of energy transfer",
+        pressure: "expressing force applied to a surface area",
+        data: "quantifying digital information storage",
+        angle: "measuring rotations or orientations",
+        velocity_angular: "describing rotational motion",
+        acceleration: "analyzing changes in velocity",
+        density: "comparing the mass-to-volume ratio of materials",
+        specific_volume: "analyzing the volume-to-mass ratio in thermodynamics",
+        moment_of_inertia: "calculating rotational dynamics",
+        moment_of_force: "analyzing rotational forces",
+        torque: "measuring rotational force in mechanical systems"
+    };
+    
+    return useCases[unitType] || "various applications";
+}
+
+// Call populateUnitOptions when the page loads
+window.onload = function() {
+    populateUnitOptions();
+    updateDynamicSnippet();
+};
+
+// Add event listeners
+document.getElementById('unitType').addEventListener('change', function() {
+    populateUnitOptions();
+    updateDynamicSnippet();
+});
+document.getElementById('fromUnit').addEventListener('change', updateDynamicSnippet);
+document.getElementById('toUnit').addEventListener('change', updateDynamicSnippet);
