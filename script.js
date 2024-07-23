@@ -1,5 +1,3 @@
-SCRIPT.JS
-
 function formatUnitName(unit) {
     return unit.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
