@@ -134,39 +134,7 @@ const conversionFactors = {
         arcminutes: { factor: 60, abbr: '′' },
         arcseconds: { factor: 3600, abbr: '″' }
     }
-    length_wavelength: {
-        meters: { factor: 1, abbr: 'm' },
-        kilometers: { factor: 0.001, abbr: 'km' },
-        centimeters: { factor: 100, abbr: 'cm' },
-        millimeters: { factor: 1000, abbr: 'mm' },
-        micrometers: { factor: 1e6, abbr: 'µm' },
-        nanometers: { factor: 1e9, abbr: 'nm' },
-        angstroms: { factor: 1e10, abbr: 'Å' },
-        picometers: { factor: 1e12, abbr: 'pm' },
-        light_years: { factor: 1.057e-16, abbr: 'ly' },
-        astronomical_units: { factor: 6.68459e-12, abbr: 'AU' },
-        parsecs: { factor: 3.24078e-17, abbr: 'pc' }
-    },
-    force: {
-        newtons: { factor: 1, abbr: 'N' },
-        kilonewtons: { factor: 0.001, abbr: 'kN' },
-        meganewtons: { factor: 1e-6, abbr: 'MN' },
-        dynes: { factor: 100000, abbr: 'dyn' },
-        kilograms_force: { factor: 0.101972, abbr: 'kgf' },
-        pounds_force: { factor: 0.224809, abbr: 'lbf' }
-    },
-    fuel_economy: {
-        miles_per_gallon: { factor: 1, abbr: 'mpg' },
-        kilometers_per_liter: { factor: 0.425144, abbr: 'km/L' },
-        liters_per_100km: { factor: 235.215, abbr: 'L/100km' },
-        miles_per_liter: { factor: 2.35215, abbr: 'mi/L' }
-    },
-    torque: {
-        newton_meters: { factor: 1, abbr: 'N·m' },
-        pound_feet: { factor: 0.737562, abbr: 'lbf·ft' },
-        kilogram_meters: { factor: 0.101972, abbr: 'kgf·m' },
-        ounce_inches: { factor: 141.612, abbr: 'ozf·in' }
-    }
+    
 };
 const unitDescriptions = {
     length: "Length is a measure of distance between two points in one dimension. It is a fundamental quantity in physics and everyday life. Common units of length include meters (m), kilometers (km), centimeters (cm), millimeters (mm), inches (in), feet (ft), yards (yd), and miles (mi). The choice of unit depends on the scale of the measurement, from microscopic distances to astronomical distances.",
@@ -181,12 +149,7 @@ const unitDescriptions = {
     pressure: "Pressure is the force applied perpendicular to the surface of an object per unit area. It is particularly important in fluid mechanics and thermodynamics. The SI unit of pressure is the pascal (Pa), but other common units include atmospheres (atm), bars, and pounds per square inch (psi). Pressure is crucial in many applications, from weather forecasting to engineering and medicine.",
     data: "Data storage capacity is a measure of the amount of digital information that can be stored in a device or system. It is typically measured in bytes or bits, with prefixes like kilo-, mega-, giga-, and tera- used for larger quantities. One byte usually consists of 8 bits. These units are crucial in computing and digital technology, used to quantify storage capacity of devices, data transfer rates, and file sizes.",
     angle: "An angle is the figure formed by two rays or lines sharing a common endpoint, called the vertex. It is a measure of rotation and is fundamental in geometry, trigonometry, and many practical applications. The most common units for measuring angles are degrees (°), where a full circle is 360°, and radians, where a full circle is approximately 6.28 radians. Other units include gradians and arcminutes/arcseconds for more precise measurements."
-    length_wavelength: "Length and wavelength units are used to measure distances, ranging from microscopic scales to astronomical distances. This category includes common units like meters and kilometers, as well as specialized units for very small scales (nanometers, angstroms) and very large scales (light years, parsecs). These units are crucial in fields such as physics, astronomy, and materials science.",
-    force: "Force is a fundamental concept in physics, representing the interaction between objects that causes them to accelerate, deform, or change direction. Common units of force include newtons (N), the SI unit, as well as pounds-force (lbf) and kilograms-force (kgf). Force measurements are essential in engineering, mechanics, and many everyday applications.",
-    fuel_economy: "Fuel economy measures the efficiency of a vehicle in terms of the distance it can travel using a specific amount of fuel. Common units include miles per gallon (mpg), kilometers per liter (km/L), and liters per 100 kilometers (L/100km). These measurements are crucial for comparing vehicle efficiency, estimating fuel costs, and assessing environmental impact.",
-    torque: "Torque is a measure of rotational force, often used in mechanics and engineering. It represents the tendency of a force to rotate an object around an axis. Common units include newton-meters (N·m), pound-feet (lbf·ft), and kilogram-meters (kgf·m). Torque is crucial in applications involving engines, motors, and any rotating machinery."
-};
-
+   };
 
 
 function convert() {
