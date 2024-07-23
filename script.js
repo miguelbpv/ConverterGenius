@@ -259,59 +259,15 @@ function populateUnitOptions() {
 
     // Update unit description
     updateUnitDescription(unitType);
-
-    // Update dynamic snippet
-    updateDynamicSnippet();
 }
 
 function updateUnitDescription(unitType) {
     const descriptionElement = document.getElementById('unitDescription');
     descriptionElement.innerHTML = `<p>${unitDescriptions[unitType]}</p>`;
 }
-function updateDynamicSnippet() {
-    const unitType = document.getElementById('unitType').value;
-    const fromUnit = document.getElementById('fromUnit').value;
-    const toUnit = document.getElementById('toUnit').value;
 
-    const fromUnitName = formatUnitName(fromUnit);
-    const toUnitName = formatUnitName(toUnit);
-    const fromUnitAbbr = conversionFactors[unitType][fromUnit].abbr;
-    const toUnitAbbr = conversionFactors[unitType][toUnit].abbr;
+// Call populateUnitOptions when the page loads
+window.onload = populateUnitOptions;
 
-    let snippetHeader = `From ${fromUnitName} (${fromUnitAbbr}) to ${toUnitName} (${toUnitAbbr})?`;
-    let snippetText = '';
-
-    if (unitType === 'temperature') {
-        snippetText = `Temperature conversions involve specific formulas. Use our converter for accurate ${fromUnitName} to ${toUnitName} conversions.`;
-    } else {
-        const conversionFactor = conversionFactors[unitType][toUnit].factor / conversionFactors[unitType][fromUnit].factor;
-        snippetText = `1 ${fromUnitName} is equal to ${conversionFactor.toFixed(6)} ${toUnitName}. This conversion is useful for ${unitDescriptions[unitType].toLowerCase()}`;
-    }
-
-    const snippetElement = document.getElementById('dynamicSnippet') || createSnippetElement();
-    snippetElement.innerHTML = `
-        <h3>${snippetHeader}</h3>
-        <p>${snippetText}</p>
-    `;
-}
-
-function createSnippetElement() {
-    const snippetElement = document.createElement('div');
-    snippetElement.id = 'dynamicSnippet';
-    snippetElement.className = 'dynamic-snippet';
-    document.querySelector('.converter-container').appendChild(snippetElement);
-    return snippetElement;
-}
-
-window.onload = function() {
-    populateUnitOptions();
-    updateDynamicSnippet();
-};
-
-document.getElementById('unitType').addEventListener('change', function() {
-    populateUnitOptions();
-    updateDynamicSnippet();
-});
-
-document.getElementById('fromUnit').addEventListener('change', updateDynamicSnippet);
-document.getElementById('toUnit').addEventListener('change', updateDynamicSnippet);
+// Add event listener to unitType select element
+document.getElementById('unitType').addEventListener('change', populateUnitOptions);
