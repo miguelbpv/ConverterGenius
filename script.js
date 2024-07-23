@@ -259,6 +259,8 @@ function populateUnitOptions() {
 
     // Update unit description
     updateUnitDescription(unitType);
+
+    // Update dynamic snippet
     updateDynamicSnippet();
 }
 
