@@ -104,6 +104,19 @@ button {
 button:hover {
     background-color: #004c4c;
 }
+.dynamic-snippet {
+    background-color: #f0f8ff;
+    border: 1px solid #b0d4e3;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.dynamic-snippet h3 {
+    margin-top: 0;
+    color: #008080;
+}
 
 #result {
     font-weight: bold;
