@@ -53,7 +53,7 @@ main {
     padding: 1rem;
 }
 
-.converter-container, .about-container {
+.converter-container, .about-container, .contact-container {
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 15px;
@@ -63,7 +63,7 @@ main {
     margin-bottom: 1rem;
 }
 
-.about-container {
+.about-container, .contact-container {
     max-width: 600px;
 }
 
@@ -139,6 +139,7 @@ button:hover {
 details {
     margin-bottom: 1rem;
 }
+
 .dynamic-snippet {
     background-color: #f0f8ff;
     padding: 1rem;
@@ -157,7 +158,6 @@ details {
 .dynamic-snippet p {
     margin-bottom: 0;
 }
-
 
 summary {
     font-weight: bold;
@@ -202,16 +202,6 @@ footer p {
     margin: 0;
 }
 
-.contact-container {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 1rem;
-}
-
 .contact-email {
     font-weight: bold;
     font-size: 1.2rem;
@@ -220,27 +210,10 @@ footer p {
     margin: 1rem 0;
 }
 
-/* Update the existing .about-container style to include .contact-container */
-.converter-container, .about-container, .contact-container {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 1rem;
-}
-
-.about-container, .contact-container {
-    max-width: 600px;
-}
-
-/* Update the media query at the bottom of your CSS file */
 @media (max-width: 600px) {
     .converter-container, .about-container, .contact-container, #unitDescription, .faq-section {
         padding: 1rem;
     }
-
 
     header h1 {
         font-size: 1.5rem;
