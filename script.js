@@ -319,7 +319,6 @@ function getTemperatureSnippetText(fromUnit, toUnit) {
 }
 
 function getConversionUseCase(unitType, fromUnit, toUnit) {
-    // Add more specific use cases as needed
     const useCases = {
         length: "measuring distances or sizes",
         weight: "determining the mass of objects",
@@ -345,13 +344,11 @@ function getConversionUseCase(unitType, fromUnit, toUnit) {
     return useCases[unitType] || "various applications";
 }
 
-// Call populateUnitOptions when the page loads
 window.onload = function() {
     populateUnitOptions();
     updateDynamicSnippet();
 };
 
-// Add event listeners
 document.getElementById('unitType').addEventListener('change', function() {
     populateUnitOptions();
     updateDynamicSnippet();
