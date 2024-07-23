@@ -1,13 +1,15 @@
+IDEX.HTML
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5MX57QM5');</script>
-    <!-- End Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5MX57QM5');</script>
+<!-- End Google Tag Manager -->
     <script type="text/javascript" src="https://app.termly.io/resource-blocker/e099bd67-c2ad-471e-a2de-0486e4abb206?autoBlock=on"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,20 +32,20 @@
     }
     </script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-38CV8ES8KV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-38CV8ES8KV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-      gtag('config', 'G-38CV8ES8KV');
-    </script>
+  gtag('config', 'G-38CV8ES8KV');
+</script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MX57QM5"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MX57QM5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <header>
         <h1><a href="index.html" class="home-link"><img src="ConverterGenius logo.png" alt="ConverterGenius Logo" class="logo">ConverterGenius</a></h1>
     </header>
@@ -51,7 +53,7 @@
         <div class="converter-container">
             <h2>Unit Converter</h2>
             <label for="unitType">UNIT TYPE</label>
-            <select id="unitType">
+            <select id="unitType" onchange="populateUnitOptions()">
                 <option value="length">Length</option>
                 <option value="weight">Weight</option>
                 <option value="temperature">Temperature</option>
@@ -64,13 +66,6 @@
                 <option value="pressure">Pressure</option>
                 <option value="data">Data</option>
                 <option value="angle">Angle</option>
-                <option value="velocity_angular">Angular Velocity</option>
-                <option value="acceleration">Acceleration</option>
-                <option value="density">Density</option>
-                <option value="specific_volume">Specific Volume</option>
-                <option value="moment_of_inertia">Moment of Inertia</option>
-                <option value="moment_of_force">Moment of Force</option>
-                <option value="torque">Torque</option>
             </select>
             <div class="unit-selectors">
                 <div>
@@ -86,7 +81,6 @@
             <button onclick="convert()">Convert</button>
             <div id="result"></div>
         </div>
-        <div id="dynamicSnippet" class="dynamic-snippet"></div>
         <div id="unitDescription"></div>
         <div class="faq-section">
             <h2>Frequently Asked Questions (FAQ)</h2>
@@ -105,15 +99,15 @@
         </div>
     </main>
     <footer>
-        <div class="footer-buttons">
-            <a href="about.html" class="footer-button">About Us</a>
-            <a href="contact.html" class="footer-button">Contact Us</a>
-            <a href="cookies.html" class="footer-button">Cookie Policy</a>
-            <a href="#" class="footer-button termly-display-preferences">Consent Preferences</a>
-            <a href="privacypolicy.html" class="footer-button">Privacy Policy</a>
-        </div>
-        <p>&copy; 2024 ConverterGenius. All rights reserved.</p>
-    </footer>
+    <div class="footer-buttons">
+        <a href="about.html" class="footer-button">About Us</a>
+        <a href="contact.html" class="footer-button">Contact Us</a>
+        <a href="cookies.html" class="footer-button">Cookie Policy</a>
+        <a href="#" class="footer-button termly-display-preferences">Consent Preferences</a>
+        <a href="privacypolicy.html" class="footer-button">Privacy Policy</a>
+    </div>
+    <p>&copy; 2024 ConverterGenius. All rights reserved.</p>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>
