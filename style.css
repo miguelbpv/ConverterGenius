@@ -200,6 +200,24 @@ footer p {
     text-align: center;
     margin: 1rem 0;
 }
+.dynamic-snippet {
+    background-color: #f0f8ff;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.dynamic-snippet h3 {
+    color: #008080;
+    margin-top: 0;
+}
+
+.dynamic-snippet p {
+    margin-bottom: 0;
+}
 
 /* Update the existing .about-container style to include .contact-container */
 .converter-container, .about-container, .contact-container {
