@@ -346,12 +346,17 @@ function getConversionUseCase(unitType, fromUnit, toUnit) {
 
 window.onload = function() {
     populateUnitOptions();
+    updateUnitDescription(document.getElementById('unitType').value);
     updateDynamicSnippet();
 };
 
 document.getElementById('unitType').addEventListener('change', function() {
     populateUnitOptions();
+    updateUnitDescription(this.value);
     updateDynamicSnippet();
 });
-document.getElementById('fromUnit').addEventListener('change', updateDynamicSnippet);
-document.getElementById('toUnit').addEventListener('change', updateDynamicSnippet);
+
+function updateUnitDescription(unitType) {
+    const descriptionElement = document.getElementById('unitDescription');
+    descriptionElement.innerHTML = `<p>${unitDescriptions[unitType]}</p>`;
+}
