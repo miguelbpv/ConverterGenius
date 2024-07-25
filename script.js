@@ -303,11 +303,21 @@ function populateUnitOptions() {
 
 function updateUnitDescription(unitType) {
     const descriptionElement = document.getElementById('unitDescription');
-    descriptionElement.innerHTML = `<p>${unitDescriptions[unitType]}</p>`;
+    if (unitDescriptions[unitType]) {
+        descriptionElement.innerHTML = `<p>${unitDescriptions[unitType]}</p>`;
+    } else {
+        descriptionElement.innerHTML = '<p>No description available for this unit type.</p>';
+    }
 }
 
 // Call populateUnitOptions when the page loads
-window.onload = populateUnitOptions;
+window.onload = function() {
+    populateUnitOptions();
+    updateUnitDescription(document.getElementById('unitType').value);
+};
 
 // Add event listener to unitType select element
 document.getElementById('unitType').addEventListener('change', populateUnitOptions);
+document.getElementById('unitType').addEventListener('change', function() {
+    updateUnitDescription(this.value);
+});
