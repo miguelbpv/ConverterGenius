@@ -135,69 +135,70 @@ const conversionFactors = {
         arcseconds: { factor: 3600, abbr: '″' }
     }
     fuel_consumption: {
-    miles_per_gallon: { factor: 1, abbr: 'mpg' },
-    kilometers_per_liter: { factor: 0.425144, abbr: 'km/L' },
-    liters_per_100km: { factor: 235.215, abbr: 'L/100km' },
-    miles_per_liter: { factor: 2.35215, abbr: 'mi/L' }
-},
-cooking: {
-    us_cup: { factor: 1, abbr: 'US cup' },
-    us_tablespoon: { factor: 16, abbr: 'US tbsp' },
-    us_teaspoon: { factor: 48, abbr: 'US tsp' },
-    milliliter: { factor: 236.588, abbr: 'mL' },
-    liter: { factor: 0.236588, abbr: 'L' },
-    uk_cup: { factor: 0.832674, abbr: 'UK cup' },
-    uk_tablespoon: { factor: 13.3228, abbr: 'UK tbsp' },
-    uk_teaspoon: { factor: 39.9683, abbr: 'UK tsp' }
-},
-luminous_intensity: {
-    candela: { factor: 1, abbr: 'cd' },
-    candlepower: { factor: 0.981, abbr: 'cp' },
-    hefnerkerze: { factor: 0.920, abbr: 'HK' },
-    lumen_per_steradian: { factor: 1, abbr: 'lm/sr' }
-},
-torque: {
-    newton_meter: { factor: 1, abbr: 'N·m' },
-    foot_pound: { factor: 0.737562, abbr: 'ft·lb' },
-    inch_pound: { factor: 8.85074, abbr: 'in·lb' },
-    kilogram_meter: { factor: 0.101972, abbr: 'kg·m' },
-    dyne_centimeter: { factor: 1e7, abbr: 'dyn·cm' }
-},
-moment_of_inertia: {
-    kilogram_square_meter: { factor: 1, abbr: 'kg·m²' },
-    gram_square_centimeter: { factor: 1e7, abbr: 'g·cm²' },
-    pound_square_foot: { factor: 23.7304, abbr: 'lb·ft²' },
-    ounce_square_inch: { factor: 5459.58, abbr: 'oz·in²' },
-    slug_square_foot: { factor: 0.737562, abbr: 'slug·ft²' }
-},
-frequency: {
-    hertz: { factor: 1, abbr: 'Hz' },
-    kilohertz: { factor: 0.001, abbr: 'kHz' },
-    megahertz: { factor: 1e-6, abbr: 'MHz' },
-    gigahertz: { factor: 1e-9, abbr: 'GHz' },
-    cycles_per_second: { factor: 1, abbr: 'cps' },
-    radians_per_second: { factor: 0.159155, abbr: 'rad/s' }
-},
-magnetic_field_strength: {
-    ampere_per_meter: { factor: 1, abbr: 'A/m' },
-    oersted: { factor: 0.0795775, abbr: 'Oe' },
-    gauss: { factor: 0.0795775, abbr: 'G' },
-    tesla: { factor: 7.95775e-4, abbr: 'T' }
-},
-radiation: {
-    gray: { factor: 1, abbr: 'Gy' },
-    rad: { factor: 100, abbr: 'rad' },
-    sievert: { factor: 1, abbr: 'Sv' },
-    rem: { factor: 100, abbr: 'rem' },
-    roentgen: { factor: 114.9425, abbr: 'R' }
-},
-viscosity: {
-    pascal_second: { factor: 1, abbr: 'Pa·s' },
-    poise: { factor: 10, abbr: 'P' },
-    centipoise: { factor: 1000, abbr: 'cP' },
-    pound_per_foot_hour: { factor: 2419.09, abbr: 'lb/(ft·h)' },
-    pound_per_foot_second: { factor: 0.671969, abbr: 'lb/(ft·s)' }
-}
+        miles_per_gallon: { factor: 1, abbr: 'mpg' },
+        kilometers_per_liter: { factor: 0.425144, abbr: 'km/L' },
+        liters_per_100km: { factor: 235.215, abbr: 'L/100km' },
+        miles_per_liter: { factor: 2.35215, abbr: 'mi/L' }
+    },
+    
+    cooking: {
+        us_cup: { factor: 1, abbr: 'US cup' },
+        us_tablespoon: { factor: 16, abbr: 'US tbsp' },
+        us_teaspoon: { factor: 48, abbr: 'US tsp' },
+        milliliter: { factor: 236.588, abbr: 'mL' },
+        liter: { factor: 0.236588, abbr: 'L' },
+        uk_cup: { factor: 0.832674, abbr: 'UK cup' },
+        uk_tablespoon: { factor: 13.3228, abbr: 'UK tbsp' },
+        uk_teaspoon: { factor: 39.9683, abbr: 'UK tsp' }
+    },
+    luminous_intensity: {
+        candela: { factor: 1, abbr: 'cd' },
+        candlepower: { factor: 0.981, abbr: 'cp' },
+        hefnerkerze: { factor: 0.920, abbr: 'HK' },
+        lumen_per_steradian: { factor: 1, abbr: 'lm/sr' }
+    }
+    torque: {
+        newton_meter: { factor: 1, abbr: 'N·m' },
+        foot_pound: { factor: 0.737562, abbr: 'ft·lb' },
+        inch_pound: { factor: 8.85074, abbr: 'in·lb' },
+        kilogram_meter: { factor: 0.101972, abbr: 'kg·m' },
+        dyne_centimeter: { factor: 1e7, abbr: 'dyn·cm' }
+    },
+    moment_of_inertia: {
+        kilogram_square_meter: { factor: 1, abbr: 'kg·m²' },
+        gram_square_centimeter: { factor: 1e7, abbr: 'g·cm²' },
+        pound_square_foot: { factor: 23.7304, abbr: 'lb·ft²' },
+        ounce_square_inch: { factor: 5459.58, abbr: 'oz·in²' },
+        slug_square_foot: { factor: 0.737562, abbr: 'slug·ft²' }
+    },
+    frequency: {
+        hertz: { factor: 1, abbr: 'Hz' },
+        kilohertz: { factor: 0.001, abbr: 'kHz' },
+        megahertz: { factor: 1e-6, abbr: 'MHz' },
+        gigahertz: { factor: 1e-9, abbr: 'GHz' },
+        cycles_per_second: { factor: 1, abbr: 'cps' },
+        radians_per_second: { factor: 0.159155, abbr: 'rad/s' }
+    },
+    magnetic_field_strength: {
+        ampere_per_meter: { factor: 1, abbr: 'A/m' },
+        oersted: { factor: 0.0795775, abbr: 'Oe' },
+        gauss: { factor: 0.0795775, abbr: 'G' },
+        tesla: { factor: 7.95775e-4, abbr: 'T' }
+    },
+    radiation: {
+        gray: { factor: 1, abbr: 'Gy' },
+        rad: { factor: 100, abbr: 'rad' },
+        sievert: { factor: 1, abbr: 'Sv' },
+        rem: { factor: 100, abbr: 'rem' },
+        roentgen: { factor: 114.9425, abbr: 'R' }
+    },
+    viscosity: {
+        pascal_second: { factor: 1, abbr: 'Pa·s' },
+        poise: { factor: 10, abbr: 'P' },
+        centipoise: { factor: 1000, abbr: 'cP' },
+        pound_per_foot_hour: { factor: 2419.09, abbr: 'lb/(ft·h)' },
+        pound_per_foot_second: { factor: 0.671969, abbr: 'lb/(ft·s)' }
+    }
 
     
     
@@ -228,97 +229,58 @@ const unitDescriptions = {
 
 
 
-function convert() {
-    const unitType = document.getElementById('unitType').value;
-    const fromUnit = document.getElementById('fromUnit').value;
-    const toUnit = document.getElementById('toUnit').value;
-    const inputValue = parseFloat(document.getElementById('inputValue').value);
+function convert(value, fromUnit, toUnit, category) {
+    const fromFactor = conversionFactors[category][fromUnit].factor;
+    const toFactor = conversionFactors[category][toUnit].factor;
+    return value * (fromFactor / toFactor);
+}
 
-    if (isNaN(inputValue)) {
-        document.getElementById('result').innerHTML = "Please enter a valid number";
+// Função para atualizar as opções de unidades
+function updateUnitOptions(category) {
+    const unitSelectFrom = document.getElementById('unit-from');
+    const unitSelectTo = document.getElementById('unit-to');
+    unitSelectFrom.innerHTML = '';
+    unitSelectTo.innerHTML = '';
+
+    for (const unit in conversionFactors[category]) {
+        const optionFrom = document.createElement('option');
+        optionFrom.value = unit;
+        optionFrom.textContent = conversionFactors[category][unit].abbr;
+        unitSelectFrom.appendChild(optionFrom);
+
+        const optionTo = document.createElement('option');
+        optionTo.value = unit;
+        optionTo.textContent = conversionFactors[category][unit].abbr;
+        unitSelectTo.appendChild(optionTo);
+    }
+}
+
+// Event Handlers
+document.getElementById('category-select').addEventListener('change', function() {
+    const selectedCategory = this.value;
+    updateUnitOptions(selectedCategory);
+    // Atualizar a descrição da categoria
+    document.getElementById('category-description').textContent = unitDescriptions[selectedCategory];
+});
+
+document.getElementById('convert-button').addEventListener('click', function() {
+    const value = parseFloat(document.getElementById('value').value);
+    const fromUnit = document.getElementById('unit-from').value;
+    const toUnit = document.getElementById('unit-to').value;
+    const category = document.getElementById('category-select').value;
+    
+    if (isNaN(value)) {
+        document.getElementById('result').textContent = "Please enter a valid number.";
         return;
     }
 
-    let result;
+    const result = convert(value, fromUnit, toUnit, category);
+    document.getElementById('result').textContent = result;
+});
 
-    if (unitType === 'temperature') {
-        result = convertTemperature(inputValue, fromUnit, toUnit);
-    } else {
-        const baseValue = inputValue / conversionFactors[unitType][fromUnit].factor;
-        result = baseValue * conversionFactors[unitType][toUnit].factor;
-    }
-
-    document.getElementById('result').innerHTML = `${inputValue} ${conversionFactors[unitType][fromUnit].abbr} = ${result.toFixed(6)} ${conversionFactors[unitType][toUnit].abbr}`;
-}
-
-
-function convertTemperature(value, from, to) {
-    if (from === to) return value;
-    
-    let celsius;
-    if (from === 'celsius') {
-        celsius = value;
-    } else if (from === 'fahrenheit') {
-        celsius = (value - 32) * 5 / 9;
-    } else if (from === 'kelvin') {
-        celsius = value - 273.15;
-    }
-
-    if (to === 'celsius') {
-        return celsius;
-    } else if (to === 'fahrenheit') {
-        return (celsius * 9 / 5) + 32;
-    } else if (to === 'kelvin') {
-        return celsius + 273.15;
-    }
-}
-
-function populateUnitOptions() {
-    const unitType = document.getElementById('unitType').value;
-    const fromUnit = document.getElementById('fromUnit');
-    const toUnit = document.getElementById('toUnit');
-
-    // Clear existing options
-    fromUnit.innerHTML = '';
-    toUnit.innerHTML = '';
-
-    // Populate new options
-    for (const unit in conversionFactors[unitType]) {
-        const formattedUnit = formatUnitName(unit);
-        const displayUnit = `${formattedUnit} (${conversionFactors[unitType][unit].abbr})`;
-        fromUnit.options.add(new Option(displayUnit, unit));
-        toUnit.options.add(new Option(displayUnit, unit));
-    }
-
-    // Set default selections
-    if (fromUnit.options.length > 0) {
-        fromUnit.selectedIndex = 0;
-    }
-    if (toUnit.options.length > 1) {
-        toUnit.selectedIndex = 1;
-    }
-
-    // Update unit description
-    updateUnitDescription(unitType);
-}
-
-function updateUnitDescription(unitType) {
-    const descriptionElement = document.getElementById('unitDescription');
-    if (unitDescriptions[unitType]) {
-        descriptionElement.innerHTML = `<p>${unitDescriptions[unitType]}</p>`;
-    } else {
-        descriptionElement.innerHTML = '<p>No description available for this unit type.</p>';
-    }
-}
-
-// Call populateUnitOptions when the page loads
-window.onload = function() {
-    populateUnitOptions();
-    updateUnitDescription(document.getElementById('unitType').value);
-};
-
-// Add event listener to unitType select element
-document.getElementById('unitType').addEventListener('change', populateUnitOptions);
-document.getElementById('unitType').addEventListener('change', function() {
-    updateUnitDescription(this.value);
+// Inicializar a página com a primeira categoria selecionada
+window.addEventListener('DOMContentLoaded', function() {
+    const initialCategory = document.getElementById('category-select').value;
+    updateUnitOptions(initialCategory);
+    document.getElementById('category-description').textContent = unitDescriptions[initialCategory];
 });
