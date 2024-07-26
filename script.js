@@ -232,6 +232,16 @@ function getTemperatureRelationship(fromUnit, toUnit) {
     const key = `${fromUnit}_${toUnit}`;
     return relationships[key] || 'Conversion formula varies';
 }
+function reverseUnits() {
+    const fromUnit = document.getElementById('fromUnit');
+    const toUnit = document.getElementById('toUnit');
+    
+    const tempValue = fromUnit.value;
+    fromUnit.value = toUnit.value;
+    toUnit.value = tempValue;
+    
+    updateConversionRelationship();
+}
 
 function populateUnitOptions() {
     const unitType = document.getElementById('unitType').value;
@@ -272,9 +282,12 @@ function updateUnitDescription(unitType) {
 window.onload = function() {
     populateUnitOptions();
     updateConversionRelationship();
+    document.getElementById('reverseUnits').addEventListener('click', reverseUnits);
 };
 
 // Add event listener to unitType select element
 document.getElementById('unitType').addEventListener('change', populateUnitOptions);
 document.getElementById('fromUnit').addEventListener('change', updateConversionRelationship);
 document.getElementById('toUnit').addEventListener('change', updateConversionRelationship);
+document.getElementById('reverseUnits').addEventListener('click', reverseUnits);
+
