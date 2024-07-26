@@ -217,6 +217,26 @@ footer p {
 .about-container, .contact-container {
     max-width: 600px;
 }
+.conversion-relationship {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.conversion-relationship h2 {
+    color: #008080;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.conversion-relationship p {
+    font-size: 1.1rem;
+}
 
 /* Update the media query at the bottom of your CSS file */
 @media (max-width: 600px) {
