@@ -196,6 +196,42 @@ function convertTemperature(value, from, to) {
         return celsius + 273.15;
     }
 }
+function updateConversionRelationship() {
+    const unitType = document.getElementById('unitType').value;
+    const fromUnit = document.getElementById('fromUnit').value;
+    const toUnit = document.getElementById('toUnit').value;
+
+    const fromUnitInfo = conversionFactors[unitType][fromUnit];
+    const toUnitInfo = conversionFactors[unitType][toUnit];
+
+    let relationshipText = "";
+
+    if (unitType === 'temperature') {
+        relationshipText = getTemperatureRelationship(fromUnit, toUnit);
+    } else {
+        const conversionFactor = toUnitInfo.factor / fromUnitInfo.factor;
+        relationshipText = `1 ${fromUnitInfo.abbr} = ${conversionFactor.toFixed(6)} ${toUnitInfo.abbr}`;
+    }
+
+    const relationshipElement = document.getElementById('conversionRelationship');
+    relationshipElement.innerHTML = `
+        <h2>${formatUnitName(fromUnit)} (${fromUnitInfo.abbr}) to ${formatUnitName(toUnit)} (${toUnitInfo.abbr})?</h2>
+        <p>${relationshipText}. Both are used to measure ${unitType}.</p>
+    `;
+}
+
+function getTemperatureRelationship(fromUnit, toUnit) {
+    const relationships = {
+        'celsius_fahrenheit': '°C to °F: Multiply by 9/5, then add 32',
+        'celsius_kelvin': '°C to K: Add 273.15',
+        'fahrenheit_celsius': '°F to °C: Subtract 32, then multiply by 5/9',
+        'fahrenheit_kelvin': '°F to K: Subtract 32, multiply by 5/9, then add 273.15',
+        'kelvin_celsius': 'K to °C: Subtract 273.15',
+        'kelvin_fahrenheit': 'K to °F: Subtract 273.15, multiply by 9/5, then add 32'
+    };
+    const key = `${fromUnit}_${toUnit}`;
+    return relationships[key] || 'Conversion formula varies';
+}
 
 function populateUnitOptions() {
     const unitType = document.getElementById('unitType').value;
@@ -224,6 +260,7 @@ function populateUnitOptions() {
 
     // Update unit description
     updateUnitDescription(unitType);
+    updateConversionRelationship();
 }
 
 function updateUnitDescription(unitType) {
@@ -232,7 +269,12 @@ function updateUnitDescription(unitType) {
 }
 
 // Call populateUnitOptions when the page loads
-window.onload = populateUnitOptions;
+window.onload = function() {
+    populateUnitOptions();
+    updateConversionRelationship();
+};
 
 // Add event listener to unitType select element
 document.getElementById('unitType').addEventListener('change', populateUnitOptions);
+document.getElementById('fromUnit').addEventListener('change', updateConversionRelationship);
+document.getElementById('toUnit').addEventListener('change', updateConversionRelationship);
