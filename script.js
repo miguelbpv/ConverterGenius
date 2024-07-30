@@ -173,6 +173,7 @@ function convert() {
     }
 
     document.getElementById('result').innerHTML = `${inputValue} ${conversionFactors[unitType][fromUnit].abbr} = ${result.toFixed(6)} ${conversionFactors[unitType][toUnit].abbr}`;
+    addToHistory(fromUnit, toUnit, inputValue, result.toFixed(6));
 }
 
 
@@ -242,6 +243,32 @@ function reverseUnits() {
     
     updateConversionRelationship();
 }
+let conversionHistory = [];
+
+function addToHistory(fromUnit, toUnit, inputValue, result) {
+    const conversion = {
+        from: fromUnit,
+        to: toUnit,
+        input: inputValue,
+        output: result,
+        timestamp: new Date().toLocaleString()
+    };
+    conversionHistory.unshift(conversion);
+    if (conversionHistory.length > 10) {
+        conversionHistory.pop();
+    }
+    updateHistoryDisplay();
+}
+
+function updateHistoryDisplay() {
+    const historyElement = document.getElementById('conversionHistory');
+    historyElement.innerHTML = '<h3>Recent Conversions</h3>';
+    conversionHistory.forEach(conversion => {
+        historyElement.innerHTML += `
+            <p>${conversion.timestamp}: ${conversion.input} ${conversion.from} = ${conversion.output} ${conversion.to}</p>
+        `;
+    });
+}
 
 function populateUnitOptions() {
     const unitType = document.getElementById('unitType').value;
@@ -283,6 +310,9 @@ window.onload = function() {
     populateUnitOptions();
     updateConversionRelationship();
     document.getElementById('reverseUnits').addEventListener('click', reverseUnits);
+    const historyDiv = document.createElement('div');
+    historyDiv.id = 'conversionHistory';
+    document.querySelector('main').appendChild(historyDiv);
 };
 
 // Add event listener to unitType select element
