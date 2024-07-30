@@ -257,6 +257,25 @@ footer p {
 .conversion-relationship p {
     font-size: 1.1rem;
 }
+#conversionHistory {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+#conversionHistory h3 {
+    color: #008080;
+    margin-top: 0;
+}
+
+#conversionHistory p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
 
 /* Update the media query at the bottom of your CSS file */
 @media (max-width: 600px) {
